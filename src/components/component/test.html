@@ -1,0 +1,2656 @@
+<!DOCTYPE html>
+<html>
+
+</html>
+
+<head>
+    <title>Problem Solving Lab</title>
+    <link rel="stylesheet" media="all"
+        href="/grader/assets/application-9123f0ae31c5cb402c09bf615783a530971b6eb99eed26c26472aaf39b666117.css" />
+    <link rel="stylesheet" media="all"
+        href="/grader/assets/main-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" />
+    <script src="/grader/assets/application-12666da148b70d487688f68c91fa49b4d5b5abc3c56d2dc14d53c3f74c47ab57.js">
+    </script>
+    <script src="/grader/assets/main-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js"></script>
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token"
+        content="o6NfM0LwFNdU4P5vL6LoCmBDN5Vp9dJLBEwRJbmpwT4eCAKYqDCyMwar8K6hNZgIADMsLokYrjY/G7R7/sH5IA==" />
+
+    <script
+        src="/grader/assets/announcement_refresh-79ae588eae5fb607f95ce2bc90a5245c055a6bffad600e75b5fd1cc214e055bf.js">
+    </script>
+
+</head>
+
+<body>
+    <header class='navbar navbar-default navbar-fixed-top'>
+        <nav>
+            <div class='container-fluid'>
+                <div class='navbar-header'>
+                    <button class='navbar-toggle collapsed' data-target='#navbar-collapse' data-toggle='collapse'>
+<span class='sr-only'>Togggle Navigation</span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+<span class='icon-bar'></span>
+</button>
+                    <a class='navbar-brand' href='/grader/main/list'>
+                        <span class='glyphicon glyphicon-home'></span>
+                        MAIN
+                    </a>
+                </div>
+                <div class='collapse navbar-collapse' id='navbar-collapse'>
+                    <ul class='nav navbar-nav'>
+                        <!-- submission -->
+                        <li class='dropdown'>
+                            <a aria-expanded='false' aria-haspopup='true' class='dropdown-toggle' data-toggle='dropdown'
+                                href='#' role='button'>
+                                Submissions
+                                <span class='caret'></span>
+                            </a>
+                            <ul class='dropdown-menu'>
+                                <li><a href="/grader/submissions">View</a></li>
+                                <li><a href="/grader/test">Self Test</a></li>
+                            </ul>
+                        </li>
+                        <!-- hall of fame -->
+                        <!-- display MODE button (with countdown in contest mode) -->
+                        <!-- admin section -->
+                    </ul>
+                    <ul class='nav navbar-nav navbar-right'>
+                        <li><a href="/grader/main/help"><span class="glyphicon glyphicon-question-sign"></span></a></li>
+                        <li title="Messages" data-toggle="tooltip"><a
+                                href="/grader/messages/list"><span class="glyphicon glyphicon-comment"></span></a></li>
+                        <li title="Settings" data-toggle="tooltip"><a
+                                href="/grader/users"><span class="glyphicon glyphicon-cog"></span></a></li>
+                        <li title="Log out" data-toggle="tooltip"><a
+                                href="/grader/"><span class="glyphicon glyphicon-log-out"></span> นายภาณุพงศ์
+                                เลิศวีรนนทรัตน์</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--
+-->
+
+    <!-- = content_tag(:p,flash[:notice],class: 'alert alert-success') if flash[:notice]!=nil -->
+
+    <div class="title">
+        <table>
+
+            <tr>
+                <td class="left-col">
+                    นายภาณุพงศ์ เลิศวีรนนทรัตน์<br/>
+Current time is 23:40:37
+
+                    <br/>
+                </td>
+                <td class="right-col">Problem Solving Lab</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class='row'>
+        <div class='col-md-7'>
+            <div class='panel panel-primary'>
+                <div class='panel-heading'>
+                    Submission
+                </div>
+                <div class='panel-body'>
+                    <form class="form" enctype="multipart/form-data" action="/grader/main/submit" accept-charset="UTF-8"
+                        method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="AGAJwd5FzCEJMoAGDF5Ioo58Xb0Apd7XcrwlmFTvxZq9y1RqNIVqxVt5jseCyTig7gxGBuBIoqpJ64DGE4f9hA==" />
+                        <div class='form-group'>
+                            <label for="submission">Problem:</label>
+                            <select class="select2 form-control" style="width: 100%" name="submission[problem_id]" id="submission_problem_id"><option selected="selected" value="-1">Specified in header</option>
+<option value="281">[mid66_farhouses] บ้านไกลเรือนเคียง</option>
+<option value="280">[mid66_boats] เรือที่ไม่มีวันกลับ</option>
+<option value="279">[mid66_horsejump] ม้ากระโดด</option>
+<option value="189">[mid61_dig] เจาะช่องวิ่งเร็ว (optional - 1 เท่า)</option>
+<option value="190">[mid61_polevault] กระโดดค้ำถ่อ (optional - 1 เท่า)</option>
+<option value="188">[mid61_prfriends] สหาย (optional - 1 เท่า)</option>
+<option value="201">[mid62_smallest] เตี้ยสุด (optional 1pt)</option>
+<option value="203">[mid62_virus] ไวรัสแทรกเลข (optional 1 เท่า)</option>
+<option value="233">[mid64_patients] จำนวนคนป่วย (optional - 1pt)</option>
+<option value="234">[mid64_redblackbridges] สะพานสี (optional 1pt)</option>
+<option value="248">[mid64_roundtable] โต๊ะหมุน (optional - 1pt)</option>
+<option value="247">[mid64_shipmentcost] ขนของถูกสุด (optional - 1 เท่า)</option>
+<option value="232">[mid64_slice] แผ่นไม้สามมิติ (optional - 1pt)</option>
+<option value="264">[mid65_countries] ประเทศ (optional - 1pt)</option>
+<option value="265">[mid65_fakeheight] ปลอมความสูง (optional - 1pt)</option>
+<option value="266">[mid65_teamprojects] แบ่งทีมทำโครงงาน (optional - 1pt)</option>
+<option value="187">[intsch] w045-b02-Interval scheduling (Greedy)</option>
+<option value="186">[maxlate] w045-b01-Max Late (Greedy)</option>
+<option value="210">[fin62_name] มุขมนตรี</option>
+<option value="249">[mid64_carrental] เลือกสัญญารถ</option>
+<option value="236">[uva10020_minimalcoverage] UVa 10020 - Minimal coverage</option>
+<option value="275">[fence] Beautiful fences</option>
+<option value="274">[uva11389_busdriver] UVa 11389 - The Bus Driver Problem</option>
+<option value="278">[uva13054_hippo] UVa 13054 - Hippo Circus</option>
+<option value="235">[uva1193_radar] UVa 1193 - Radar Installation (optional - 1pt)</option>
+<option value="273">[uva12405_scarecrow] UVa 12405 - Scarecrow (optional - 1pt)</option>
+<option value="277">[uva12834_extremeterror] UVa 12834 - Extreme Terror (optional - 1pt)</option>
+<option value="276">[walk] Walk (optional - 1pt)</option>
+<option value="51">[bipartite] w04-b05-bipartite</option>
+<option value="49">[box] w04-b03-กล่อง</option>
+<option value="231">[topo] คำนวณ topological order</option>
+<option value="198">[uva10305_orderingtasks] UVa 10305 - Ordering Tasks</option>
+<option value="143">[mid592_maze] เขาวงกต</option>
+<option value="202">[mid62_ttt] เป่ายิ้งฉุบ</option>
+<option value="52">[twoteams] w07-g02-twoteams</option>
+<option value="48">[stardrawing] w07-g01-หมู่ดาว (optional - 2pts)</option>
+<option value="35">[searchsum1] w05-b02-searchsum1</option>
+<option value="221">[setpractice] Set Practice</option>
+<option value="38">[likemax1] w05-b04-Like มากสุด 1</option>
+<option value="37">[productaccount] w05-b03-โกดัง</option>
+<option value="225">[webcache] Web Cache</option>
+<option value="53">[conncount] w04-b01-นับ connected components</option>
+<option value="55">[jumppoint] w04-b04-jumppoint</option>
+<option value="50">[lemmo] w04-g01-เล็มโม่ (optional - 2pt)</option>
+<option value="39">[likemax2] w05-s04-Like มากสุด 2 (optional - 1pt)</option>
+<option value="54">[qualitymap] w04-b02-qualitymap (optional - 1pt)</option>
+<option value="36">[searchsum2] w05-s03-searchsum2 (optional - 1pt)</option>
+<option value="19">[listwork1] w03-b01-ใส่และลบ 1</option>
+<option value="20">[listwork2] w03-b02-ใส่และลบ 2</option>
+<option value="24">[ic] w03-b04-ic</option>
+<option value="25">[trains] w03-b03-ชานชลา</option>
+<option value="116">[uva10935_throwingcards1] UVa 10935 - Throwing cards away I</option>
+<option value="115">[uva11988_broken] UVa 11988 - Broken Keyboard</option>
+<option value="117">[uva514_rails] UVa 514 - Rails</option>
+<option value="263">[ku01_cars] รถยนต์ (optional - 1pt)</option>
+<option value="262">[ku01_distinct] แตกต่างกัน</option>
+<option value="23">[chains] w03-g01-chains (optional 2pts)</option>
+<option value="21">[necklace] w03-s01-necklace</option>
+<option value="2">[abcd] w01-b01-ABCD</option>
+<option value="1">[darts] w01-b04-ปาเป้า</option>
+<option value="3">[gifts] w01-b02-รวยเละ</option>
+<option value="242">[ku01_bowls] กองชาม</option>
+<option value="243">[ku01_next] เปลี่ยนมือ</option>
+<option value="260">[ku01_numcode] รหัสตัวเลข</option>
+<option value="241">[ku01_running] แซงรอบ</option>
+<option value="261">[ku01_slide] เพนกวิน</option>
+<option value="244">[ku01_thief] ของขวัญและขโมย</option>
+<option value="4">[robot1000] w01-b05-robot1000</option></select>
+                        </div>
+                        <div class='form-group'>
+                            <label for="file">File:</label>
+                            <div class='input-group'>
+                                <span class='input-group-btn'>
+<span class='btn btn-default btn-file'>
+Browse
+<input type="file" name="file" id="file" />
+</span>
+                                </span>
+                                <input type="text" name="" id="" readonly="readonly" class="form-control" />
+                            </div>
+                        </div>
+                        <input type="submit" name="commit" value="Submit" class="btn btn-default" />
+                    </form>
+
+
+                </div>
+            </div>
+            <table class='table table-striped table-condensed'>
+                <thead>
+                    <tr>
+                        <th>Task name</th>
+                        <th>Full name</th>
+                        <th># of sub(s)</th>
+                        <th>Results</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            mid66_farhouses
+                        </td>
+                        <td>
+                            บ้านไกลเรือนเคียง
+                            <br>
+                            <a href="/grader/tasks/download/281/mid66_farhouses.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            22/01/24 01:43:54
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+[PP][PP][PPP][PPPP][PPP]PP[PP][PPP][PPP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127580/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127580">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/281">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127580/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid66_boats
+                        </td>
+                        <td>
+                            เรือที่ไม่มีวันกลับ
+                            <br>
+                            <a href="/grader/tasks/download/280/mid66_boats.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            23/01/24 13:19:21
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPP[PP][PP][PP][PPPPPP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/128128/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/128128">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/280">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/128128/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid66_horsejump
+                        </td>
+                        <td>
+                            ม้ากระโดด
+                            <br>
+                            <a href="/grader/tasks/download/279/mid66_horsejump.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            22/01/24 03:37:52
+                            <br>
+                            <strong>score: </strong>
+                            20
+                            [
+                            <tt class='grader-comment'>
+P-PTTTTTTT
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127957/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127957">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/279">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127957/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid61_dig
+                        </td>
+                        <td>
+                            เจาะช่องวิ่งเร็ว (optional - 1 เท่า)
+                            <br>
+                            <a href="/grader/tasks/download/189/mid61_dig.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            01/01/24 23:43:51
+                            <br>
+                            <strong>score: </strong>
+                            0
+                            [
+                            <tt class='grader-comment'>
+xxx-x-xxxx
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/125412/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/125412">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/189">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/125412/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid61_polevault
+                        </td>
+                        <td>
+                            กระโดดค้ำถ่อ (optional - 1 เท่า)
+                            <br>
+                            <a href="/grader/tasks/download/190/mid61_polevault.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 17:06:29
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPPPPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127253/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127253">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/190">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127253/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid61_prfriends
+                        </td>
+                        <td>
+                            สหาย (optional - 1 เท่า)
+                            <br>
+                            <a href="/grader/tasks/download/188/mid61_prfriends.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 16:04:09
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127249/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127249">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/188">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127249/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid62_smallest
+                        </td>
+                        <td>
+                            เตี้ยสุด (optional 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/201/mid62_smallest.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 15:48:51
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+[PP][PPPP][PPPPPPP][PPPPPP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127248/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127248">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/201">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127248/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid62_virus
+                        </td>
+                        <td>
+                            ไวรัสแทรกเลข (optional 1 เท่า)
+                            <br>
+                            <a href="/grader/tasks/download/203/mid62_virus.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 15:08:47
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+[PPP][PPPPPP][PPPP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127247/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127247">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/203">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127247/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid64_patients
+                        </td>
+                        <td>
+                            จำนวนคนป่วย (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/233/mid64_patients.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 14:51:56
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127244/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127244">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/233">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127244/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid64_redblackbridges
+                        </td>
+                        <td>
+                            สะพานสี (optional 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/234/mid64_redblackbridges.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            02/01/24 00:23:26
+                            <br>
+                            <strong>score: </strong>
+                            50
+                            [
+                            <tt class='grader-comment'>
+PPP-PP----
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/125419/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/125419">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/234">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/125419/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid64_roundtable
+                        </td>
+                        <td>
+                            โต๊ะหมุน (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/248/mid64_roundtable.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/248">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid64_shipmentcost
+                        </td>
+                        <td>
+                            ขนของถูกสุด (optional - 1 เท่า)
+                            <br>
+                            <a href="/grader/tasks/download/247/mid64_shipmentcost.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            02/01/24 01:02:02
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPP[PP][PP][PP][PP][PP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/125421/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/125421">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/247">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/125421/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid64_slice
+                        </td>
+                        <td>
+                            แผ่นไม้สามมิติ (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/232/mid64_slice.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 21:51:40
+                            <br>
+                            <strong>score: </strong>
+                            30
+                            [
+                            <tt class='grader-comment'>
+P[PP]P[PPPT][PPTP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127323/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127323">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/232">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127323/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid65_countries
+                        </td>
+                        <td>
+                            ประเทศ (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/264/mid65_countries.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 23:05:16
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+[PP][PP][PP][PP][PPPPP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127412/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127412">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/264">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127412/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid65_fakeheight
+                        </td>
+                        <td>
+                            ปลอมความสูง (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/265/mid65_fakeheight.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/265">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid65_teamprojects
+                        </td>
+                        <td>
+                            แบ่งทีมทำโครงงาน (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/266/mid65_teamprojects.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/266">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            intsch
+                        </td>
+                        <td>
+                            w045-b02-Interval scheduling (Greedy)
+                            <br>
+                            <a href="/grader/tasks/download/187/intsch.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            12/01/24 07:23:35
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/126851/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/126851">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/187">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/126851/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            maxlate
+                        </td>
+                        <td>
+                            w045-b01-Max Late (Greedy)
+                            <br>
+                            <a href="/grader/tasks/download/186/maxlate.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 12:44:24
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127177/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127177">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/186">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127177/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            fin62_name
+                        </td>
+                        <td>
+                            มุขมนตรี
+                            <br>
+                            <a href="/grader/tasks/download/210/fin62_name.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 12:45:04
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127181/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127181">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/210">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127181/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid64_carrental
+                        </td>
+                        <td>
+                            เลือกสัญญารถ
+                            <br>
+                            <a href="/grader/tasks/download/249/mid64_carrental.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 12:45:39
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127185/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127185">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/249">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127185/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva10020_minimalcoverage
+                        </td>
+                        <td>
+                            UVa 10020 - Minimal coverage
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=24&amp;page=show_problem&amp;problem=961">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 18:04:48
+                            <br>
+                            <strong>score: </strong>
+                            0
+                            [
+                            <tt class='grader-comment'>
+uva-graded(Wrong answer):29145054
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127260/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127260">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/236">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127260/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            fence
+                        </td>
+                        <td>
+                            Beautiful fences
+                            <br>
+                            <a href="/grader/tasks/download/275/fence.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            21/01/24 12:45:59
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/127188/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/127188">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/275">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/127188/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva11389_busdriver
+                        </td>
+                        <td>
+                            UVa 11389 - The Bus Driver Problem
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=2384">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/274">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva13054_hippo
+                        </td>
+                        <td>
+                            UVa 13054 - Hippo Circus
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=24&amp;page=show_problem&amp;problem=4952">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/278">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva1193_radar
+                        </td>
+                        <td>
+                            UVa 1193 - Radar Installation (optional - 1pt)
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=24&amp;page=show_problem&amp;problem=3634">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/235">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva12405_scarecrow
+                        </td>
+                        <td>
+                            UVa 12405 - Scarecrow (optional - 1pt)
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=onlinejudge&amp;Itemid=8&amp;page=show_problem&amp;problem=3836">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/273">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva12834_extremeterror
+                        </td>
+                        <td>
+                            UVa 12834 - Extreme Terror (optional - 1pt)
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=24&amp;page=show_problem&amp;problem=4699">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/277">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            walk
+                        </td>
+                        <td>
+                            Walk (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/276/walk.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/276">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            bipartite
+                        </td>
+                        <td>
+                            w04-b05-bipartite
+                            <br>
+                            <a href="/grader/tasks/download/51/bipartite.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            01/01/24 09:30:46
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/125323/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/125323">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/51">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/125323/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            box
+                        </td>
+                        <td>
+                            w04-b03-กล่อง
+                            <br>
+                            <a href="/grader/tasks/download/49/box.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            01/01/24 14:40:13
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/125352/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/125352">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/49">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/125352/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            topo
+                        </td>
+                        <td>
+                            คำนวณ topological order
+                            <br>
+                            <a href="https://theory.cpe.ku.ac.th/~pramook/ioi/2011/oct22_topo.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            01/01/24 15:23:05
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/125354/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/125354">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/231">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/125354/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva10305_orderingtasks
+                        </td>
+                        <td>
+                            UVa 10305 - Ordering Tasks
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=24&amp;page=show_problem&amp;problem=1246">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            02/01/24 12:30:30
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+uva-graded(Accepted):29102991
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/125499/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/125499">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/198">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/125499/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid592_maze
+                        </td>
+                        <td>
+                            เขาวงกต
+                            <br>
+                            <a href="/grader/tasks/download/143/mid592_maze.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            01/01/24 19:53:12
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/125357/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/125357">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/143">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/125357/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            mid62_ttt
+                        </td>
+                        <td>
+                            เป่ายิ้งฉุบ
+                            <br>
+                            <a href="/grader/tasks/download/202/mid62_ttt.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            12/01/24 03:57:53
+                            <br>
+                            <strong>score: </strong>
+                            50
+                            [
+                            <tt class='grader-comment'>
+P--P-PP--P
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/126829/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/126829">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/202">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/126829/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            twoteams
+                        </td>
+                        <td>
+                            w07-g02-twoteams
+                            <br>
+                            <a href="/grader/tasks/download/52/twoteams.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            12/01/24 06:57:04
+                            <br>
+                            <strong>score: </strong>
+                            57
+                            [
+                            <tt class='grader-comment'>
+-P-P-PP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/126849/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/126849">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/52">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/126849/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            stardrawing
+                        </td>
+                        <td>
+                            w07-g01-หมู่ดาว (optional - 2pts)
+                            <br>
+                            <a href="/grader/tasks/download/48/stardrawing.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/48">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            searchsum1
+                        </td>
+                        <td>
+                            w05-b02-searchsum1
+                            <br>
+                            <a href="/grader/tasks/download/35/searchsum1.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            18/12/23 06:09:14
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123785/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123785">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/35">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123785/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            setpractice
+                        </td>
+                        <td>
+                            Set Practice
+                            <br>
+                            <a href="/grader/tasks/download/221/setpractice.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            18/12/23 09:34:18
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123815/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123815">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/221">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123815/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            likemax1
+                        </td>
+                        <td>
+                            w05-b04-Like มากสุด 1
+                            <br>
+                            <a href="/grader/tasks/download/38/likemax1.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            18/12/23 09:52:13
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123817/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123817">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/38">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123817/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            productaccount
+                        </td>
+                        <td>
+                            w05-b03-โกดัง
+                            <br>
+                            <a href="/grader/tasks/download/37/productaccount.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            18/12/23 10:07:28
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123825/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123825">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/37">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123825/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            webcache
+                        </td>
+                        <td>
+                            Web Cache
+                            <br>
+                            <a href="/grader/tasks/download/225/webcache.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            18/12/23 10:19:02
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123829/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123829">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/225">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123829/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            conncount
+                        </td>
+                        <td>
+                            w04-b01-นับ connected components
+                            <br>
+                            <a href="/grader/tasks/download/53/conncount.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            18/12/23 14:24:49
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123854/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123854">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/53">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123854/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            jumppoint
+                        </td>
+                        <td>
+                            w04-b04-jumppoint
+                            <br>
+                            <a href="/grader/tasks/download/55/jumppoint.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            23/12/23 12:23:39
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/124114/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/124114">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/55">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/124114/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            lemmo
+                        </td>
+                        <td>
+                            w04-g01-เล็มโม่ (optional - 2pt)
+                            <br>
+                            <a href="/grader/tasks/download/50/lemmo.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            0
+                        </td>
+                        <td>
+                            -
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/direct_edit_problem/50">New</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            likemax2
+                        </td>
+                        <td>
+                            w05-s04-Like มากสุด 2 (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/39/likemax2.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            4
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            23/12/23 13:52:03
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/124126/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/124126">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/39">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/124126/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            qualitymap
+                        </td>
+                        <td>
+                            w04-b02-qualitymap (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/54/qualitymap.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            23/12/23 15:48:45
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/124138/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/124138">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/54">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/124138/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            searchsum2
+                        </td>
+                        <td>
+                            w05-s03-searchsum2 (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/36/searchsum2.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            23/12/23 14:11:06
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/124128/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/124128">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/36">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/124128/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            listwork1
+                        </td>
+                        <td>
+                            w03-b01-ใส่และลบ 1
+                            <br>
+                            <a href="/grader/tasks/download/19/listwork1.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            04/12/23 08:19:03
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/122091/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/122091">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/19">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/122091/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            listwork2
+                        </td>
+                        <td>
+                            w03-b02-ใส่และลบ 2
+                            <br>
+                            <a href="/grader/tasks/download/20/listwork2.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            04/12/23 08:21:23
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/122094/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/122094">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/20">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/122094/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ic
+                        </td>
+                        <td>
+                            w03-b04-ic
+                            <br>
+                            <a href="/grader/tasks/download/24/ic.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            04/12/23 08:37:50
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/122110/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/122110">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/24">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/122110/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            trains
+                        </td>
+                        <td>
+                            w03-b03-ชานชลา
+                            <br>
+                            <a href="/grader/tasks/download/25/trains.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            04/12/23 12:01:33
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/122189/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/122189">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/25">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/122189/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva10935_throwingcards1
+                        </td>
+                        <td>
+                            UVa 10935 - Throwing cards away I
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=21&amp;page=show_problem&amp;problem=1876">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            8
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            05/12/23 00:48:16
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+uva-graded(Accepted):29025272
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/122269/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/122269">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/116">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/122269/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva11988_broken
+                        </td>
+                        <td>
+                            UVa 11988 - Broken Keyboard
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=24&amp;page=show_problem&amp;problem=3139">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            05/12/23 01:24:17
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+uva-graded(Accepted):29025370
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/122277/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/122277">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/115">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/122277/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            uva514_rails
+                        </td>
+                        <td>
+                            UVa 514 - Rails
+                            <br>
+                            <a
+                                href="https://onlinejudge.org/index.php?option=com_onlinejudge&amp;Itemid=8&amp;category=7&amp;page=show_problem&amp;problem=455">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            05/12/23 11:30:55
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+uva-graded(Accepted):29027109
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/122411/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/122411">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/117">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/122411/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ku01_cars
+                        </td>
+                        <td>
+                            รถยนต์ (optional - 1pt)
+                            <br>
+                            <a href="/grader/tasks/download/263/ku01_cars.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            11/12/23 23:16:55
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPP[PPPPPPPP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123132/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123132">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/263">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123132/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ku01_distinct
+                        </td>
+                        <td>
+                            แตกต่างกัน
+                            <br>
+                            <a href="/grader/tasks/download/262/ku01_distinct.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            05/12/23 04:18:09
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/122336/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/122336">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/262">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/122336/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            chains
+                        </td>
+                        <td>
+                            w03-g01-chains (optional 2pts)
+                            <br>
+                            <a href="/grader/tasks/download/23/chains.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            11/12/23 13:51:58
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+[PPPP][PPPPPPPPPPPP]
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123109/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123109">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/23">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123109/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            necklace
+                        </td>
+                        <td>
+                            w03-s01-necklace
+                            <br>
+                            <a href="/grader/tasks/download/21/necklace.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            11/12/23 14:18:26
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/123115/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/123115">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/21">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/123115/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            abcd
+                        </td>
+                        <td>
+                            w01-b01-ABCD
+                            <br>
+                            <a href="/grader/tasks/download/2/abcd.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            27/11/23 01:21:14
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/120028/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/120028">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/2">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/120028/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            darts
+                        </td>
+                        <td>
+                            w01-b04-ปาเป้า
+                            <br>
+                            <a href="/grader/tasks/download/1/darts.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            27/11/23 01:43:06
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/120123/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/120123">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/1">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/120123/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            gifts
+                        </td>
+                        <td>
+                            w01-b02-รวยเละ
+                            <br>
+                            <a href="/grader/tasks/download/3/gifts.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            27/11/23 01:51:31
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/120151/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/120151">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/3">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/120151/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ku01_bowls
+                        </td>
+                        <td>
+                            กองชาม
+                            <br>
+                            <a href="/grader/tasks/download/242/ku01_bowls.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            27/11/23 02:31:27
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/120341/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/120341">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/242">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/120341/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ku01_next
+                        </td>
+                        <td>
+                            เปลี่ยนมือ
+                            <br>
+                            <a href="/grader/tasks/download/243/ku01_next.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            27/11/23 03:19:15
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/120501/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/120501">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/243">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/120501/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ku01_numcode
+                        </td>
+                        <td>
+                            รหัสตัวเลข
+                            <br>
+                            <a href="/grader/tasks/download/260/ku01_numcode.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            29/11/23 10:47:49
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/121092/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/121092">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/260">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/121092/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ku01_running
+                        </td>
+                        <td>
+                            แซงรอบ
+                            <br>
+                            <a href="/grader/tasks/download/241/ku01_running.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            3
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            29/11/23 11:24:50
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/121098/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/121098">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/241">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/121098/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ku01_slide
+                        </td>
+                        <td>
+                            เพนกวิน
+                            <br>
+                            <a href="/grader/tasks/download/261/ku01_slide.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            6
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            29/11/23 11:44:19
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/121107/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/121107">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/261">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/121107/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ku01_thief
+                        </td>
+                        <td>
+                            ของขวัญและขโมย
+                            <br>
+                            <a href="/grader/tasks/download/244/ku01_thief.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            1
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            29/11/23 12:16:35
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/121109/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/121109">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/244">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/121109/edit">Edit</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            robot1000
+                        </td>
+                        <td>
+                            w01-b05-robot1000
+                            <br>
+                            <a href="/grader/tasks/download/4/robot1000.pdf">[desc]
+                                <span class='glyphicon glyphicon-file'></span></a>
+                        </td>
+                        <td>
+                            2
+                        </td>
+                        <td>
+                            <strong>Graded at</strong>
+                            29/11/23 12:27:03
+                            <br>
+                            <strong>score: </strong>
+                            100
+                            [
+                            <tt class='grader-comment'>
+PPPPPPPPPP
+</tt>
+                            ]
+                            <br>
+                            <strong>View:</strong>
+                            <!-- = link_to "compiler msg", {:action => 'compiler_msg', :id => submission.id}, {popup: true,class: 'btn btn-xs btn-info'} -->
+                            <a popup="true" class="btn btn-xs btn-info" data-remote="true"
+                                href="/grader/submissions/121113/compiler_msg">compiler msg</a>
+                            <a class="btn btn-xs btn-info" href="/grader/main/source/121113">src</a>
+                            <a class="btn btn-xs btn-info" href="/grader/submissions/prob/4">submissions</a>
+
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="/grader/submissions/121113/edit">Edit</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class='col-md-5'>
+            <div class='panel panel-info'>
+                <div class='panel-heading'>
+                    Announcement
+                    <a class="btn btn-xs btn-default" href="/grader/announcements">Manage</a>
+                </div>
+                <ul class='list-group'>
+                    <li class='list-group-item'>
+                        <strong>
+
+</strong>
+                        <small>(updated almost 2 years ago on 2022-03-07 12:58:45 +0700)</small>
+                        <br>
+                        <p><strong>โจทย์ UVa backup</strong>: ถ้าเว็บ UVa ล่ม ดูโจทย์ได้ที่นี่ <a
+                                href="https://theory.cpe.ku.ac.th/~jittat/courses/uva/">https://theory.cpe.ku.ac.th/~jittat/courses/uva/</a>
+                        </p>
+
+                        </br>
+                        <script>
+                            Announcement.updateRecentId(23);
+                        </script>
+                    </li>
+                    <li class='list-group-item'>
+                        <strong>
+
+</strong>
+                        <small>(updated almost 2 years ago on 2022-02-28 03:17:34 +0700)</small>
+                        <br>
+                        <p>ในโจทย์บางข้อ ถ้าข้อมูลนำเข้ามีขนาดใหญ่มาก การใช้ <code>cin</code> เฉย ๆ จะอ่านข้อมูลไม่ทัน
+                            ให้เพิ่มบรรทัดนี้ด้านหน้าก่อนเรียกใช้ <code>cin</code> ครั้งแรก เช่นใส่ในบรรทัดแรกของ
+                            <code>main</code></p>
+
+                        <pre><code>ios::sync_with_stdio(false);
+cin.tie(NULL);
+</code></pre>
+
+                        <p>จะทำให้อ่านเร็วขึ้น และอย่าใช้ <code>endl</code> ให้ใช้ <code>"\n"</code> แทน เช่น</p>
+
+                        <pre><code>cout &lt;&lt; x &lt;&lt; "\n";
+</code></pre>
+
+                        <p><strong>การอ่าน EOF</strong> (ข้อ wavio &amp; coin change) <a
+                                href="https://theory.cpe.ku.ac.th/wiki/index.php/Ske_algo_lab/read_input">อ่านด้วย
+                                cin</a>, <a
+                                href="https://theory.cpe.ku.ac.th/wiki/index.php/Adt_lab/notes_on_how_to_read_input">อ่านด้วย
+                                scanf</a></p>
+
+                        <p><strong>ข้อ UVa 11462 - Age sort</strong>: ควรทำอย่างที่ระบุด้านบนด้วย
+                            นอกจากนี้ตอนพิมพ์ผลลัพธ์อย่าให้มีช่องว่างสุดท้ายเกินมา อาจจะตรวจแล้วไม่ผ่านเนื่องจาก
+                            presentation error</p>
+
+                        </br>
+                        <script>
+                            Announcement.updateRecentId(21);
+                        </script>
+                    </li>
+                    <li class='list-group-item'>
+                        <strong>
+
+</strong>
+                        <small>(updated 11 months ago on 2023-02-20 13:14:09 +0700)</small>
+                        <br>
+                        <p>ข้อ probe1d, traffic1, และ traffic2 ให้เขียนเป็น c++ เท่านั้น (เขียนเป็น c จะ compile ไม่ได้)
+                            ดูตัวอย่างการเรียกไลบรารีจากโค้ดตัวอย่างในไลบรารี <a
+                                href="https://theory.cpe.ku.ac.th/~jittat/lib/traffic/">ลิงก์ไปยังไลบรารี traffic</a>
+                            และ <a href="https://gitlab.com/jittat/probe1d">ไลบรารี probe1d</a></p>
+
+                        </br>
+                        <script>
+                            Announcement.updateRecentId(17);
+                        </script>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript'>
+Announcement.registerRefreshEventTimer();
+    </script>
+    <div class='modal fade' id='compiler' role='dialog' tabindex='-1'>
+        <div class='modal-dialog modal-lg' role='document'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <button aria-label='close' class='close' data-dismissed='modal' type='button'>
+<span aria-hidden='true' data-dismiss='modal'>&times;</span>
+</button>
+                    <h4>Compiler message</h4>
+                </div>
+                <div class='modal-body'>
+                    <pre id='compiler_msg'></pre>
+                </div>
+                <div class='modal-footer'>
+                    <button class='btn btn-default' data-dismiss='modal' type='button'>Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
