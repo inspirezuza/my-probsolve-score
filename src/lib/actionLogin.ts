@@ -58,7 +58,9 @@ export async function login(prevState: any, formData: any) {
     console.log(htmlContent);
     if (htmlContent.includes("<h1>Solve is back...</h1>")) {
       console.log("wtf");
-      throw new Error("Expected content not found");
+      throw new Error(
+        "Login Failed please check your username and password again"
+      );
     } else {
       // Continue with your logic if the expected content is found
       console.log("Expected content found");
@@ -158,7 +160,7 @@ export async function login(prevState: any, formData: any) {
   } catch (error: any) {
     console.log(error.message);
     return {
-      message: "",
+      message: error.message,
       myName: "",
       maxNormalPercent: 0,
       maxOptionalPercent: 0,

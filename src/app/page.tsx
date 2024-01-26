@@ -44,11 +44,11 @@ export default function LoginPage() {
 
   return (
     <>
-      {state.message == "" ? (
-        <div className="overflow-hidden">
-          <div className="flex flex-col items-center justify-center p-4 min-h-screen bg-gray-100 dark:bg-gray-800">
+      {state.message != "Success" ? (
+        <div className=" overflow-hidden relative">
+          <div className="animate-fade-up animate-ease-out flex flex-col items-center justify-center p-4 min-h-screen bg-gray-100 dark:bg-gray-800">
             <div className="mx-auto max-w-sm space-y-6">
-              <div className="space-y-2 text-center">
+              <div className=" space-y-2 text-center">
                 <h1 className="text-3xl font-bold">Probsolve-Score</h1>
                 <p className="text-gray-500 dark:text-gray-400">
                   คะแนนเก็บ Probsolve 60% + 10% (optional) ตอนนี้คุณมีเท่าไร?
@@ -82,11 +82,27 @@ export default function LoginPage() {
                 >
                   เจอบัคหรอ? แจ้งมาเลย 🥹
                 </Link>
+                {state.message == "" ? (
+                  <div></div>
+                ) : (
+                  <div>Message : {state?.message}</div>
+                )}
               </div>
             </div>
           </div>
-
-          <Footer />
+          <div className=" w-full">
+            <footer className="w-full p-4  text-center bg-gray-200 dark:bg-gray-700 absolute bottom-0">
+              <p className="text-gray-600 dark:text-gray-300">
+                {`ไม่ phishing คับดูโค้ดได้ที่ `}
+                <Link className="text-blue-500 underline" href="#">
+                  GitHub
+                </Link>
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                {`"เพราะเราก็ขี้เกียจนับคะแนนเองเหมือนกัน😔"`}
+              </p>
+            </footer>
+          </div>
         </div>
       ) : (
         <div>
@@ -105,7 +121,7 @@ export default function LoginPage() {
                 </Button>
               </Link>
             </header>
-            <div className="flex-1 overflow-y-auto">
+            <div className="animate-fade-up animate-ease-out flex-1 overflow-y-auto">
               {" "}
               {/* This enables vertical scrolling */}
               <div className="flex flex-col items-center justify-center p-10">
@@ -125,7 +141,7 @@ export default function LoginPage() {
                         {state.myNormalPercent}/{state.maxNormalPercent}
                       </p>
                     </div>
-                    <div className="pb-10">
+                    <div className="">
                       {state.myOptionalPercent >= state.maxOptionalPercent ? (
                         <div>
                           <div className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
@@ -135,7 +151,7 @@ export default function LoginPage() {
                               {state.maxOptionalPercent}
                             </p>
                           </div>
-                          เก่งมาก 😲👍
+                          เก่งมาก {state.myName} 😲👍
                         </div>
                       ) : (
                         <div className="pt-4 text-xl font-bold">
@@ -151,7 +167,17 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <Footer />
+            <footer className="w-full p-4  text-center bg-gray-200 dark:bg-gray-700 bottom-0">
+              <p className="text-gray-600 dark:text-gray-300">
+                {`ไม่ phishing คับดูโค้ดได้ที่ `}
+                <Link className="text-blue-500 underline" href="#">
+                  GitHub
+                </Link>
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                {`"เพราะเราก็ขี้เกียจนับคะแนนเองเหมือนกัน😔"`}
+              </p>
+            </footer>
           </div>
         </div>
       )}
