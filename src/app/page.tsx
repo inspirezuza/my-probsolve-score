@@ -102,7 +102,7 @@ export default function LoginPage() {
           <div className=" w-full">
             <footer className="w-full p-4  text-center bg-gray-200 dark:bg-gray-700 absolute bottom-0">
               <p className="text-gray-600 dark:text-gray-300">
-                {`ไม่ phishing คับดูโค้ดได้ที่ `}
+                {`ไม่มีการเก็บข้อมูลคับดูโค้ดได้ที่ `}
                 <Link
                   className="text-blue-500 underline"
                   href="https://github.com/inspirezuza/my-probsolve-score"
@@ -181,7 +181,7 @@ export default function LoginPage() {
 
             <footer className="w-full p-4  text-center bg-gray-200 dark:bg-gray-700 bottom-0">
               <p className="text-gray-600 dark:text-gray-300">
-                {`ไม่ phishing คับดูโค้ดได้ที่ `}
+                {`ไม่มีการเก็บข้อมูลคับดูโค้ดได้ที่ `}
                 <Link
                   className="text-blue-500 underline"
                   href="https://github.com/inspirezuza/my-probsolve-score"
