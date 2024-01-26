@@ -16,7 +16,7 @@ import Chart from "@/components/component/donut-2";
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <Button className="w-full" type="submit " disabled={pending}>
+    <Button className="w-full" type="submit" disabled={pending}>
       {pending ? "..." : "Login"}
     </Button>
   );
