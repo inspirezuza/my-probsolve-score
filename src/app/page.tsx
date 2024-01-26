@@ -10,8 +10,17 @@ import { Footer } from "@/components/component/footer";
 import Link from "next/link";
 
 import { login } from "@/lib/actionLogin";
-import { useFormState } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import Chart from "@/components/component/donut-2";
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button className="w-full" type="submit " disabled={pending}>
+      {pending ? "..." : "Login"}
+    </Button>
+  );
+}
 
 export default function LoginPage() {
   const refreshPage = () => {
@@ -70,9 +79,10 @@ export default function LoginPage() {
                     />
                   </div>
                   <div className="pt-4">
-                    <Button className="w-full" type="submit">
+                    <SubmitButton />
+                    {/* <Button className="w-full" type="submit">
                       Login
-                    </Button>
+                    </Button> */}
                   </div>
                 </form>
                 <Link
