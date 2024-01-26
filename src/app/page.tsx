@@ -32,13 +32,12 @@ export default function LoginPage() {
   const [state, formAction] = useFormState(login, initState);
 
   const chartData = [
-    { name: "A", value: state.myNormalPercent, color: "#0B60B0" },
-    { name: "B", value: state.realOptionalPercent, color: "#40A2D8" },
+    { name: "A", value: state.myNormalPercent, color: "#BA90C6" },
+    { name: "B", value: state.realOptionalPercent, color: "#E8A0BF" },
     {
       name: "C",
       value: state.leftOverPercent,
-      // value: 150,
-      color: "#F0EDCF",
+      color: "#FDF4F5",
     },
   ];
 
