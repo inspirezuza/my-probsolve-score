@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ProbSolve-score",
-  description: "because im lazy to count score myself",
+  title: "My-ProbSolve-score",
+  description: "because im lazy too count score myself",
 };
 
 export default function RootLayout({
