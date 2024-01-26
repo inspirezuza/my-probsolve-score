@@ -55,7 +55,7 @@ export async function login(prevState: any, formData: any) {
 
     // Step 3: Process the login response
     const htmlContent = await loginResponse.text();
-    console.log(htmlContent);
+    // console.log(htmlContent);
     if (htmlContent.includes("<h1>Solve is back...</h1>")) {
       console.log("wtf");
       throw new Error(
