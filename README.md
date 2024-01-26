@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Problem Solving Score
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+Welcome to **My Problem Solving Score**! This is a web application designed to assist students in tracking their scores in 01204214 Kasetsart University problem-solving subjects . With regular updates, students can conveniently monitor their progress and performance in these subjects.
+
+## Grader Problem Solving
+https://solve.secondtrain.org/
+
+## Features
+
+- **Score Tracking**: สามารถใช้ดูคะแนนเก็บ คะแนนโบนัส และคะแนนแบบเป็นเปอร์เซ็นไทล์รวมทั้งหมดได้
+- **Real-Time Updates**: อัพเดตแบบ Dynamic ตามที่ใsน Second Solve 
+- **User-Friendly Interface**: มี Donut Chart แสนสวยงาม อย่าบัคเลย ขอร้อง ขี้เกียจแก้แล้ว 😭
+- **Personalized Accounts**: ใช้ API ยิงแล้วแสดงขึ้นหน้า Client ไม่มีการเก็บข้อมูลใดๆงับ
+
+## How to Use
+
+**Login**: ใช้ Nontri account + password สำหรับเข้า login https://solve.secondtrain.org/ 
+
+
+## Technologies Used
+
+- **Frontend**:
+  - Next js only because i love u
+  - หมดแล้ว มีแค่ Frontend เพียวๆ เพราะไม่มีการเก็บข้อมูลใดๆ จ้า
+
+## Installation
+
+To run this project locally, follow these steps:
+
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Install dependencies using npm:
+
+```bash
+npm install
+```
+
+4. Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Access the application through your web browser at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contributors
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [prukngan](https://github.com/prukngan) - Designer
+- [Patchanonss](https://github.com/Patchanonss) - Score Algorithm
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
+This project is licensed under the [MIT License](LICENSE).
+## Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![App Screenshot](https://cdn.discordapp.com/attachments/900631639288324109/1200478149226541097/image.png?ex=65c65366&is=65b3de66&hm=d10d11bafebe82f9a73d1aa973db767d179386236b232271cb25d0b7bf20db25&)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![App Screenshot](https://cdn.discordapp.com/attachments/900631639288324109/1200478838761738442/image.png?ex=65c6540a&is=65b3df0a&hm=0c144342e9148475c34110859edc90b58407b4f11cf14f67da89a00352dbaf89&)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
