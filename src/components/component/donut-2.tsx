@@ -14,9 +14,10 @@ interface ChartProps {
 const Chart: React.FC<ChartProps> = ({ data }) => {
   const totalValue = data.reduce((acc, item) => acc + item.value, 0);
   const totalDegrees = 360; // Total degrees in a circle
-  const total_value_except_last = data
+  let total_value_except_last = data
     .slice(0, -1)
     .reduce((a, b) => a + b.value, 0);
+  total_value_except_last = Math.round(total_value_except_last * 10) / 10;
   // Calculate start and end degrees for each data item
   let startDegree = 0;
   const chartSegments = data.map((item) => {
