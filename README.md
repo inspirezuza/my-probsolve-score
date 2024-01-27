@@ -22,7 +22,7 @@ https://solve.secondtrain.org/
 ## Technologies Used
 
 - **Frontend**:
-  - Next js only because i love u
+  - Next js only because i love u next js
   - หมดแล้ว มีแค่ Frontend เพียวๆ เพราะไม่มีการเก็บข้อมูลใดๆ จ้า
 
 ## Installation
