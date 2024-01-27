@@ -2,6 +2,15 @@
 
 import * as cheerio from "cheerio";
 
+function extractOptionalNumber(title: string) {
+  const regex = /optional\D*(\d+)/i;
+  const match = title.match(regex);
+  if (match && match[1]) {
+    return parseInt(match[1]);
+  }
+  return null;
+}
+
 export async function login(prevState: any, formData: any) {
   try {
     const username = formData.get("username") as string;
@@ -77,10 +86,8 @@ export async function login(prevState: any, formData: any) {
 
     let countNormal = 0;
     let countOptional = 0;
-    // let sumScoreNormal = 0;
-    // let sumScoreOptional = 0;
     let myName = "";
-    // Iterate over each table row and extract the title and score
+
     $("tbody tr").each((index, element) => {
       if (index == 0) {
         // console.log($(element).find("td:nth-child(1)").text().trim());
@@ -109,21 +116,26 @@ export async function login(prevState: any, formData: any) {
         }
       }
 
-      //midterm optional
-      if (index in [1, 2, 3]) {
-        title += "optional - 1pt";
+      const examProblem = [
+        "บ้านไกลเรือนเคียง",
+        "เรือที่ไม่มีวันกลับ",
+        "ม้ากระโดด",
+      ];
+      for (const problem of examProblem) {
+        if (title.includes(problem)) {
+          title += " - optional - 1pt";
+          break;
+        }
       }
-
-      if (title.search("optional - ") != -1) {
-        const optionalPoint = Number(
-          title[title.search("optional - ") + 1 + 10]
-        );
+      const optionalPoint = extractOptionalNumber(title);
+      if (optionalPoint != null && optionalPoint > 0) {
         countOptional += optionalPoint;
         mySumScoreOptional += parseInt(score) * optionalPoint;
       } else {
         // sumScoreNormal += 1;
         countNormal += 1;
         mySumScoreNormal += parseInt(score);
+        console.log("normal", title, score, mySumScoreNormal, countNormal);
       }
       results.push({ title, score });
     });
@@ -145,6 +157,18 @@ export async function login(prevState: any, formData: any) {
       myNormalPercent -
       realOptionalPercent;
 
+    const leftOverNormalScore = countNormal * 100 - mySumScoreNormal;
+    const leftOverOptionalScore =
+      (maxOptionalPercent * 100) / scoreRatio - mySumScoreOptional;
+
+    console.log(
+      countNormal,
+      countOptional,
+      mySumScoreNormal,
+      mySumScoreOptional,
+      scoreRatio
+    );
+
     const result = {
       message: "Success",
       myName,
@@ -154,6 +178,8 @@ export async function login(prevState: any, formData: any) {
       myOptionalPercent,
       realOptionalPercent,
       leftOverPercent,
+      leftOverNormalScore,
+      leftOverOptionalScore,
     };
     console.log(result);
     return result;
@@ -168,6 +194,8 @@ export async function login(prevState: any, formData: any) {
       myOptionalPercent: 0,
       realOptionalPercent: 0,
       leftOverPercent: 0,
+      leftOverNormalScore: 0,
+      leftOverOptionalScore: 0,
     };
   }
 }

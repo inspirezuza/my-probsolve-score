@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "My-ProbSolve-score",
   description: "because im lazy too count score myself",
+  metadataBase: new URL("https://my-probsolve-score.vercel.app"),
 };
 
 export default function RootLayout({

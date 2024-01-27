@@ -12,6 +12,7 @@ import Link from "next/link";
 import { login } from "@/lib/actionLogin";
 import { useFormState, useFormStatus } from "react-dom";
 import Chart from "@/components/component/donut-2";
+import RainbowJittat from "@/components/component/rainbow-jittat";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -36,6 +37,8 @@ export default function LoginPage() {
     myOptionalPercent: 0,
     realOptionalPercent: 0,
     leftOverPercent: 0,
+    leftOverNormalScore: 0,
+    leftOverOptionalScore: 0,
   };
 
   const [state, formAction] = useFormState(login, initState);
@@ -73,7 +76,7 @@ export default function LoginPage() {
                     <Label htmlFor="password">Password</Label>
                     <Input
                       name="password"
-                      placeholder="f44h8"
+                      placeholder="xxxxx"
                       required
                       type="password"
                     />
@@ -152,24 +155,42 @@ export default function LoginPage() {
                       <p className="font-normal">
                         {state.myNormalPercent}/{state.maxNormalPercent}
                       </p>
+                      <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                        คุณต้องทำอีก {state.leftOverNormalScore} คะแนน
+                      </p>
                     </div>
                     <div className="">
                       {state.myOptionalPercent >= state.maxOptionalPercent ? (
-                        <div>
-                          <div className="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                        <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                          <div className="font-extrabold ">
                             Optional Score:{" "}
-                            <p className="font-normal">
-                              {state.myOptionalPercent}/
-                              {state.maxOptionalPercent}
-                            </p>
                           </div>
-                          เก่งมาก {state.myName} 😲👍
+                          <p className="font-normal">
+                            {state.myOptionalPercent}/{state.maxOptionalPercent}
+                          </p>
+                          <p className="text-sm font-normal ">
+                            คะแนนของคุณเกินมา{" "}
+                            {-Math.round(state.leftOverOptionalScore * 10) / 10}{" "}
+                            คะแนน!
+                          </p>
+                          <p className=" text-md font-normal">
+                            เก่งมาก {state.myName}!
+                          </p>
+
+                          <div className="flex justify-center items-center p-4">
+                            <RainbowJittat />
+                          </div>
                         </div>
                       ) : (
                         <div className="pt-4 text-xl font-bold">
                           Optional Score:{" "}
                           <p className="font-normal">
                             {state.myOptionalPercent}/{state.maxOptionalPercent}
+                          </p>
+                          <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
+                            คุณต้องทำอีก{" "}
+                            {Math.round(state.leftOverOptionalScore * 10) / 10}{" "}
+                            คะแนน
                           </p>
                         </div>
                       )}
