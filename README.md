@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to **My Problem Solving Score**! This is a web application designed to assist students in tracking their scores in 01204214 Kasetsart University problem-solving subjects . With regular updates, students can conveniently monitor their progress and performance in these subjects.
+Welcome to **My Problem Solving Score**! This is a web application designed to assist students in tracking their scores in 01204214 Kasetsart University problem-solving subjects. With auto updates, students can conveniently monitor their progress and performance in these subjects.
 
 ## Grader Problem Solving
 https://solve.secondtrain.org/
