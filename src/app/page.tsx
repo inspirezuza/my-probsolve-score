@@ -76,7 +76,7 @@ export default function LoginPage() {
                     <Label htmlFor="password">Password</Label>
                     <Input
                       name="password"
-                      placeholder="xxxxx"
+                      placeholder="password ตามที่อาจารย์ให้ในห้อง"
                       required
                       type="password"
                     />
