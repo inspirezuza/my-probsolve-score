@@ -31,6 +31,7 @@ export default function LoginPage() {
   const initState = {
     message: "",
     myName: "",
+    myNontriID: "",
     maxNormalPercent: 0,
     maxOptionalPercent: 0,
     myNormalPercent: 0,
@@ -144,7 +145,7 @@ export default function LoginPage() {
                   <div className="space-y-2 text-center">
                     <h1 className="pt-8 text-3xl font-bold">Your Score</h1>
                     <p className="text-gray-500 dark:text-gray-400">
-                      ID: 6510503671
+                      ID: {state.myNontriID}
                     </p>
                     <div className="p-4">
                       {/* {console.log(chartData)} */}

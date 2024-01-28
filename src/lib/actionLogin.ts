@@ -172,6 +172,7 @@ export async function login(prevState: any, formData: any) {
     const result = {
       message: "Success",
       myName,
+      myNontriID: username,
       maxNormalPercent,
       maxOptionalPercent,
       myNormalPercent,
@@ -188,6 +189,7 @@ export async function login(prevState: any, formData: any) {
     return {
       message: error.message,
       myName: "",
+      myNontriID: "",
       maxNormalPercent: 0,
       maxOptionalPercent: 0,
       myNormalPercent: 0,
