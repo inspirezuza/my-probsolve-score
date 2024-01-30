@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to **My Problem Solving Score**! This is a web application designed to assist students in tracking their scores in 01204214 Kasetsart University problem-solving subjects. With auto updates, students can conveniently monitor their progress and performance in these subjects.
+Welcome to **My Problem Solving Score**! This is a web application designed to assist students in tracking their scores in 01204214 Kasetsart University problem-solving subjects . With regular updates, students can conveniently monitor their progress and performance in these subjects.
 
 ## Grader Problem Solving
 https://solve.secondtrain.org/
@@ -12,7 +12,7 @@ https://solve.secondtrain.org/
 - **Score Tracking**: สามารถใช้ดูคะแนนเก็บ คะแนนโบนัส และคะแนนแบบเป็นเปอร์เซ็นไทล์รวมทั้งหมดได้
 - **Real-Time Updates**: อัพเดตแบบ Dynamic ตามที่ใsน Second Solve 
 - **User-Friendly Interface**: มี Donut Chart แสนสวยงาม อย่าบัคเลย ขอร้อง ขี้เกียจแก้แล้ว 😭
-- **Personalized Accounts**: ใช้ API ยิงแล้วแสดงขึ้นหน้า Client ไม่มีการเก็บข้อมูลใดๆงับ
+- **Personalized Accounts**: ใช้ API ยิงเอาข้อมูลแล้วแสดงขึ้นหน้า Client ไม่มีการเก็บข้อมูลใดๆ
 
 ## How to Use
 
@@ -22,7 +22,7 @@ https://solve.secondtrain.org/
 ## Technologies Used
 
 - **Frontend**:
-  - Next js only because i love u next js
+  - Next js only because i love u
   - หมดแล้ว มีแค่ Frontend เพียวๆ เพราะไม่มีการเก็บข้อมูลใดๆ จ้า
 
 ## Installation
@@ -55,7 +55,19 @@ npm run dev
 This project is licensed under the [MIT License](LICENSE).
 ## Screenshots
 
-![App Screenshot](https://cdn.discordapp.com/attachments/900631639288324109/1200478149226541097/image.png?ex=65c65366&is=65b3de66&hm=d10d11bafebe82f9a73d1aa973db767d179386236b232271cb25d0b7bf20db25&)
+![App Screenshot](https://cdn.discordapp.com/attachments/900631639288324109/1201937133921636413/image.png?ex=65cba22f&is=65b92d2f&hm=51fa238844edb1d72d313de786af6379aeb192cfa48adae3ed79567b01954176&)
 
-![App Screenshot](https://cdn.discordapp.com/attachments/900631639288324109/1200478838761738442/image.png?ex=65c6540a&is=65b3df0a&hm=0c144342e9148475c34110859edc90b58407b4f11cf14f67da89a00352dbaf89&)
+![App Screenshot](https://cdn.discordapp.com/attachments/900631639288324109/1201937321709273179/image.png?ex=65cba25c&is=65b92d5c&hm=ef5e6acbeefea49ccd11efa1e252ce76b1507872a381193cc93ed8356940da96&)
 
+## Patch notes
+#### 1.1
+
+Score system update
+- เปลี่ยนระบบคะแนนรวมของ Donut chart เป็น คะแนนทั่วไป + คะแนนโบนัสเติมเต็ม + คะแนนโบนัสคงเหลือ <= 70%
+- คะแนนรวมทั่วไปจะแสดงเป็น คะแนนทั่วไป + คะแนนโบนัสเติมเต็ม
+- คะแนนรวมโบนัสจะแสดงเป็น คะแนนโบนัสคงเหลือ
+
+Rainbow Jittat update
+
+"เนื่องจากก่อนหน้านี้มีผู้คนปลดล็อก easter egg นี้มากเกินไป เราจึงต้องปรับเกณฑ์ให้คู่ควรกับความ Legendary ของเขา"
+- ปลดล็อกเมื่อได้คะแนนโบนัสเกิน 10% => ปลดล็อกเมื่อได้คะแนนรวมเกิน 70%
