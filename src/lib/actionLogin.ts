@@ -3,7 +3,7 @@
 import * as cheerio from "cheerio";
 
 function extractOptionalNumber(title: string) {
-  const regex = /optional\D*(\d+)/i;
+  const regex = /ptional\D*(\d+)/i;
   const match = title.match(regex);
   if (match && match[1]) {
     return parseInt(match[1]);
@@ -145,11 +145,46 @@ export async function login(prevState: any, formData: any) {
 
     const scoreRatio = maxNormalPercent / countNormal;
 
+    // For chart
     const myNormalPercent =
-      Math.round(((mySumScoreNormal * scoreRatio) / 100) * 10) / 10;
-    const myOptionalPercent =
-      Math.round(((mySumScoreOptional * scoreRatio) / 100) * 10) / 10;
+      Math.round(((mySumScoreNormal * scoreRatio) / 100) * 1000) / 1000;
+    let myOptionalPercent =
+      Math.round(((mySumScoreOptional * scoreRatio) / 100) * 1000) / 1000;
 
+    let myOptionalExceed = 0;
+
+    if (myOptionalPercent >= maxNormalPercent - myNormalPercent) {
+      myOptionalExceed = maxNormalPercent - myNormalPercent;
+      myOptionalPercent =
+        myOptionalPercent - (maxNormalPercent - myNormalPercent);
+    } else {
+      myOptionalExceed = myOptionalPercent;
+      myOptionalPercent = 0;
+    }
+
+    let myleftOverScore =
+      maxNormalPercent +
+      maxOptionalPercent -
+      myNormalPercent -
+      myOptionalExceed -
+      myOptionalPercent;
+    if (myleftOverScore < 0) {
+      myleftOverScore = 0;
+    }
+
+    // For text output
+    const myScoreToDoLeft =
+      ((maxNormalPercent + maxOptionalPercent) / scoreRatio) * 100 -
+      mySumScoreNormal -
+      mySumScoreOptional;
+
+    console.log(
+      myNormalPercent,
+      myOptionalExceed,
+      myOptionalPercent,
+      myleftOverScore,
+      myScoreToDoLeft
+    );
     const realOptionalPercent = myOptionalPercent > 10 ? 10 : myOptionalPercent;
     const leftOverPercent =
       maxNormalPercent +
@@ -161,13 +196,13 @@ export async function login(prevState: any, formData: any) {
     const leftOverOptionalScore =
       (maxOptionalPercent * 100) / scoreRatio - mySumScoreOptional;
 
-    console.log(
-      countNormal,
-      countOptional,
-      mySumScoreNormal,
-      mySumScoreOptional,
-      scoreRatio
-    );
+    // console.log(
+    //   countNormal,
+    //   countOptional,
+    //   mySumScoreNormal,
+    //   mySumScoreOptional,
+    //   scoreRatio
+    // );
 
     const result = {
       message: "Success",
@@ -176,11 +211,10 @@ export async function login(prevState: any, formData: any) {
       maxNormalPercent,
       maxOptionalPercent,
       myNormalPercent,
+      myOptionalExceed,
       myOptionalPercent,
-      realOptionalPercent,
-      leftOverPercent,
-      leftOverNormalScore,
-      leftOverOptionalScore,
+      myleftOverScore,
+      myScoreToDoLeft,
     };
     console.log(result);
     return result;
@@ -193,11 +227,10 @@ export async function login(prevState: any, formData: any) {
       maxNormalPercent: 0,
       maxOptionalPercent: 0,
       myNormalPercent: 0,
+      myOptionalExceed: 0,
       myOptionalPercent: 0,
-      realOptionalPercent: 0,
-      leftOverPercent: 0,
-      leftOverNormalScore: 0,
-      leftOverOptionalScore: 0,
+      myleftOverScore: 0,
+      myScoreToDoLeft: 0,
     };
   }
 }

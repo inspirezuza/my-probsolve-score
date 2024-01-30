@@ -8,7 +8,7 @@ export default function RainbowJittat() {
           ปลดล็อกสกินจิตรทัศน์สีรุ้ง!
         </span>
         <span className="text-sm pb-4 bg-gradient-to-r  from-red-600 via-green-600 to-blue-600 text-transparent bg-clip-text bg-300% animate-gradient">
-          คะแนนของคุณถูกปรับเป็น 10% เนื่องจากคุณทำเยอะเกิน!
+          คะแนนของคุณเกิน 70% แล้ว!
         </span>
         <div className=" relative bg-cover h-auto w-fit">
           <Image

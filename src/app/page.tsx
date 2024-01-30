@@ -35,22 +35,29 @@ export default function LoginPage() {
     maxNormalPercent: 0,
     maxOptionalPercent: 0,
     myNormalPercent: 0,
+    myOptionalExceed: 0,
     myOptionalPercent: 0,
-    realOptionalPercent: 0,
-    leftOverPercent: 0,
-    leftOverNormalScore: 0,
-    leftOverOptionalScore: 0,
+    myleftOverScore: 0,
+    myScoreToDoLeft: 0,
   };
 
   const [state, formAction] = useFormState(login, initState);
 
   const chartData = [
-    { name: "A", value: state.myNormalPercent, color: "#BA90C6" },
-    { name: "B", value: state.realOptionalPercent, color: "#E8A0BF" },
+    { name: "A", value: state.myNormalPercent, color: "#756AB6" },
+    { name: "B", value: state.myOptionalExceed, color: "#AC87C5" },
     {
       name: "C",
-      value: state.leftOverPercent,
-      color: "#FDF4F5",
+      value:
+        state.myOptionalPercent >= state.maxOptionalPercent
+          ? state.maxOptionalPercent
+          : state.myOptionalPercent,
+      color: "#E0AED0",
+    },
+    {
+      name: "D",
+      value: state.myleftOverScore,
+      color: "#FFE5E5",
     },
   ];
 
@@ -95,6 +102,7 @@ export default function LoginPage() {
                 >
                   เจอบัคหรอ? แจ้งมาเลย 🥹
                 </Link>
+
                 {state.message == "" ? (
                   <div></div>
                 ) : (
@@ -102,6 +110,10 @@ export default function LoginPage() {
                 )}
               </div>
             </div>
+          </div>
+          <div className="text-xs font-normal p-4  text-gray-400 max-w-sm mx-auto w-full absolute bottom-20  left-0 right-0">
+            *คะแนนอาจคลาดเคลื่อนเล็กน้อยเนื่องจากอาจมีข้อที่ปิดไป
+            แนะนำให้ทำคะแนนให้ได้เกินกว่าเป้าหมายนะคับ
           </div>
           <div className=" w-full">
             <footer className="w-full p-4  text-center bg-gray-200 dark:bg-gray-700 absolute bottom-0">
@@ -148,33 +160,32 @@ export default function LoginPage() {
                       ID: {state.myNontriID}
                     </p>
                     <div className="p-4">
-                      {/* {console.log(chartData)} */}
                       <Chart data={chartData} />
                     </div>
                     <div className="pt-4 text-xl font-bold">
                       Homework Score:{" "}
                       <p className="font-normal">
-                        {state.myNormalPercent}/{state.maxNormalPercent}
-                      </p>
-                      <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                        คุณต้องทำอีก {state.leftOverNormalScore} คะแนน
+                        {Math.round(state.myNormalPercent * 10) / 10} +
+                        <p className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 inline-block">
+                          {Math.round(state.myOptionalExceed * 10) / 10}
+                        </p>
+                        /{state.maxNormalPercent}
                       </p>
                     </div>
                     <div className="">
-                      {state.myOptionalPercent >= state.maxOptionalPercent ? (
-                        <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                          <div className="font-extrabold ">
-                            Optional Score:{" "}
-                          </div>
-                          <p className="font-normal">
-                            {state.myOptionalPercent}/{state.maxOptionalPercent}
-                          </p>
+                      <div className="text-transparent text-xl bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+                        <div className="font-extrabold ">Optional Score: </div>
+                        <p className="font-normal">
+                          {Math.round(state.myOptionalPercent * 10) / 10}/
+                          {state.maxOptionalPercent}
+                        </p>
+                      </div>
+                      {state.myleftOverScore <= 0 ? (
+                        <div>
                           <p className="text-sm font-normal ">
-                            คะแนนของคุณเกินมา{" "}
-                            {-Math.round(state.leftOverOptionalScore * 10) / 10}{" "}
-                            คะแนน!
+                            คะแนนของคุณเกินมา {-state.myScoreToDoLeft} คะแนน!
                           </p>
-                          <p className=" text-md font-normal">
+                          <p className="text-transparent  bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 text-md font-normal">
                             เก่งมาก {state.myName}!
                           </p>
 
@@ -183,15 +194,9 @@ export default function LoginPage() {
                           </div>
                         </div>
                       ) : (
-                        <div className="pt-4 text-xl font-bold">
-                          Optional Score:{" "}
-                          <p className="font-normal">
-                            {state.myOptionalPercent}/{state.maxOptionalPercent}
-                          </p>
-                          <p className="text-sm font-normal text-gray-500 dark:text-gray-400">
-                            คุณต้องทำอีก{" "}
-                            {Math.round(state.leftOverOptionalScore * 10) / 10}{" "}
-                            คะแนน
+                        <div>
+                          <p className=" text-sm font-normal text-gray-500 dark:text-gray-400">
+                            คุณต้องทำอีก {state.myScoreToDoLeft} คะแนน สู้ๆ!
                           </p>
                         </div>
                       )}
