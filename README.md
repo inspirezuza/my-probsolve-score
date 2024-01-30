@@ -4,6 +4,8 @@
 
 Welcome to **My Problem Solving Score**! This is a web application designed to assist students in tracking their scores in 01204214 Kasetsart University problem-solving subjects . With regular updates, students can conveniently monitor their progress and performance in these subjects.
 
+https://my-probsolve-score.vercel.app/
+
 ## Grader Problem Solving
 https://solve.secondtrain.org/
 
@@ -71,3 +73,4 @@ Rainbow Jittat update
 
 "เนื่องจากก่อนหน้านี้มีผู้คนปลดล็อก easter egg นี้มากเกินไป เราจึงต้องปรับเกณฑ์ให้คู่ควรกับความ Legendary ของเขา"
 - ปลดล็อกเมื่อได้คะแนนโบนัสเกิน 10% => ปลดล็อกเมื่อได้คะแนนรวมเกิน 70%
+
