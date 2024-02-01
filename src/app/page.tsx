@@ -163,12 +163,9 @@ export default function LoginPage() {
                       <Chart data={chartData} />
                     </div>
                     <div className="pt-4 text-xl font-bold">
-                      Homework +{` `}
-                      <p className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
-                        Optional Score:
-                      </p>
+                      Homework Score:{" "}
                       <p className="font-normal">
-                        {Math.round(state.myNormalPercent * 10) / 10} +{` `}
+                        {Math.round(state.myNormalPercent * 10) / 10} +
                         <p className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 inline-block">
                           {Math.round(state.myOptionalExceed * 10) / 10}
                         </p>
