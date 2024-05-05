@@ -1,5 +1,7 @@
 # My Problem Solving Score
 
+![image](https://github.com/inspirezuza/my-probsolve-score/assets/102022496/25c6a3f1-461e-485a-80fe-4f546684c4df)
+
 ## Introduction
 
 Welcome to **My Problem Solving Score**! This is a web application designed to assist students in tracking their scores in 01204214 Kasetsart University problem-solving subjects . With regular updates, students can conveniently monitor their progress and performance in these subjects.
@@ -57,9 +59,11 @@ npm run dev
 This project is licensed under the [MIT License](LICENSE).
 ## Screenshots
 
-![App Screenshot](https://cdn.discordapp.com/attachments/900631639288324109/1201937133921636413/image.png?ex=65cba22f&is=65b92d2f&hm=51fa238844edb1d72d313de786af6379aeb192cfa48adae3ed79567b01954176&)
+![image](https://github.com/inspirezuza/my-probsolve-score/assets/102022496/3327e462-b049-4ce4-9323-9ab8448a387b)
 
-![App Screenshot](https://cdn.discordapp.com/attachments/900631639288324109/1201937321709273179/image.png?ex=65cba25c&is=65b92d5c&hm=ef5e6acbeefea49ccd11efa1e252ce76b1507872a381193cc93ed8356940da96&)
+![image](https://github.com/inspirezuza/my-probsolve-score/assets/102022496/abaa7a5c-967b-40b0-8736-1c76ebf9f495)
+
+![image](https://github.com/inspirezuza/my-probsolve-score/assets/102022496/29992541-d474-49eb-8900-d65174c9b7fb)
 
 ## Patch notes
 #### 1.1
