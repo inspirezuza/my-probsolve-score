@@ -143,7 +143,7 @@ export async function login(prevState: any, formData: any) {
     }
 
     // Load the HTML content into Cheerio
-    const $ = cheerio.load(htmlContent, { decodeEntities: false });
+    const $ = cheerio.load(htmlContent);
 
     // Array to store the extracted titles and scores
     const results: { title: string; score: string }[] = [];
