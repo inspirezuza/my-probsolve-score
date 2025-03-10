@@ -11,59 +11,126 @@ function extractOptionalNumber(title: string) {
   return null;
 }
 
+import axios from "axios";
+import * as tough from "tough-cookie";
+import { wrapper } from "axios-cookiejar-support"; // Use named import
+
+// Enable axios cookie jar support
+wrapper(axios);
+
+async function loginToSecondTrain(username: string, password: string) {
+  const loginUrl = "https://solve2.secondtrain.org/grader/login/login";
+
+  // Create a cookie jar to handle session cookies
+  const cookieJar = new tough.CookieJar();
+  const client = axios.create({
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+    },
+    withCredentials: true,
+    jar: cookieJar,
+  });
+
+  try {
+    // 1. GET the login page to extract authenticity token
+    const getResponse = await client.get(loginUrl);
+
+    if (getResponse.status !== 200) {
+      console.error("Failed to fetch the login page.");
+      return;
+    }
+
+    // Parse HTML for authenticity token
+    const $ = cheerio.load(getResponse.data);
+    const authenticityToken = $("input[name='authenticity_token']").val();
+
+    if (!authenticityToken) {
+      console.error("Failed to extract authenticity token from login page.");
+      return;
+    }
+
+    console.log("Extracted authenticity token:", authenticityToken);
+
+    // 2. POST the login form
+    const formData = new URLSearchParams();
+    formData.append("utf8", "✓");
+    formData.append("authenticity_token", authenticityToken as string);
+    formData.append("login", username);
+    formData.append("password", password);
+    formData.append("commit", "Login");
+
+    const postResponse = await client.post(loginUrl, formData, {
+      headers: {
+        Referer: loginUrl,
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    });
+
+    console.log("Login response status code:", postResponse.status);
+    console.log(postResponse.data);
+    return postResponse.data;
+  } catch (error) {
+    console.error("Error during login:", error);
+  }
+}
+
 export async function login(prevState: any, formData: any) {
   try {
     const username = formData.get("username") as string;
     const password = formData.get("password") as string;
-    const response = await fetch("https://solve.secondtrain.org/grader/");
-    if (!response.ok) {
-      throw new Error("Failed to fetch");
-    }
-    const html = await response.text();
 
-    // Extract authenticity token from the HTML response
-    const authenticityTokenRegex = /authenticity_token" value="([^"]+)"/;
-    const match = html.match(authenticityTokenRegex);
+    const loginResponse = await loginToSecondTrain(username, password);
+    console.log(loginResponse);
+    // const response = await fetch("https://solve.secondtrain.org/grader/");
+    // if (!response.ok) {
+    //   throw new Error("Failed to fetch");
+    // }
+    // const html = await response.text();
 
-    const sessionIdHeader = response.headers.get("Set-Cookie");
-    let sessionIdValue: string | undefined;
-    let authenticityToken: string | undefined;
-    if (sessionIdHeader) {
-      const sessionIdRegex = /_session_id=([^;]+)/;
-      const sessionIdMatch = sessionIdHeader.match(sessionIdRegex);
-      if (sessionIdMatch && match) {
-        sessionIdValue = sessionIdMatch[1];
-        authenticityToken = match[1];
-        // console.log(authenticityToken, sessionIdValue);
-      }
-    }
+    // // Extract authenticity token from the HTML response
+    // const authenticityTokenRegex = /authenticity_token" value="([^"]+)"/;
+    // const match = html.match(authenticityTokenRegex);
 
-    console.log(authenticityToken, sessionIdValue);
-    const loginFormData = new URLSearchParams();
-    loginFormData.append("utf8", "✓");
-    loginFormData.append("authenticity_token", authenticityToken as string);
-    loginFormData.append("login", username);
-    loginFormData.append("password", password);
-    loginFormData.append("commit", "Login");
+    // const sessionIdHeader = response.headers.get("Set-Cookie");
+    // let sessionIdValue: string | undefined;
+    // let authenticityToken: string | undefined;
+    // if (sessionIdHeader) {
+    //   const sessionIdRegex = /_session_id=([^;]+)/;
+    //   const sessionIdMatch = sessionIdHeader.match(sessionIdRegex);
+    //   if (sessionIdMatch && match) {
+    //     sessionIdValue = sessionIdMatch[1];
+    //     authenticityToken = match[1];
+    //     // console.log(authenticityToken, sessionIdValue);
+    //   }
+    // }
 
-    const loginResponse = await fetch(
-      "https://solve.secondtrain.org/grader/login/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-          Cookie: `_session_id=${sessionIdValue}`, // Attach session cookie to request headers
-        },
-        body: loginFormData,
-      }
-    );
+    // console.log(authenticityToken, sessionIdValue);
+    // const loginFormData = new URLSearchParams();
+    // loginFormData.append("utf8", "✓");
+    // loginFormData.append("authenticity_token", authenticityToken as string);
+    // loginFormData.append("login", username);
+    // loginFormData.append("password", password);
+    // loginFormData.append("commit", "Login");
 
-    if (!loginResponse.ok) {
-      throw new Error("Failed to log in");
-    }
+    // const loginResponse = await fetch(
+    //   "https://solve.secondtrain.org/grader/login/login",
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/x-www-form-urlencoded",
+    //       Cookie: `_session_id=${sessionIdValue}`, // Attach session cookie to request headers
+    //     },
+    //     body: loginFormData,
+    //   }
+    // );
+
+    // if (!loginResponse.ok) {
+    //   throw new Error("Failed to log in");
+    // }
 
     // Step 3: Process the login response
-    const htmlContent = await loginResponse.text();
+    const htmlContent = loginResponse;
+    // const htmlContent = await loginResponse.text();
     // console.log(htmlContent);
     if (htmlContent.includes("<h1>Solve is back...</h1>")) {
       console.log("wtf");
@@ -116,11 +183,7 @@ export async function login(prevState: any, formData: any) {
         }
       }
 
-      const examProblem = [
-        "บ้านไกลเรือนเคียง",
-        "เรือที่ไม่มีวันกลับ",
-        "ม้ากระโดด",
-      ];
+      const examProblem = ["-"]; // โจทย์ข้อสอบจะกลายเป็น optional
       for (const problem of examProblem) {
         if (title.includes(problem)) {
           title += " - optional - 1pt";
